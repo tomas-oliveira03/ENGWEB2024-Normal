@@ -1,0 +1,55 @@
+Warmup:
+
+1.
+Código: db.contratos.countDocuments()
+Resposta: 36377
+
+
+2.
+Código: db.contratos.countDocuments({tipoprocedimento: "Ajuste Direto Regime Geral" })
+Resposta: 17067
+
+
+3.
+Código: db.contratos.distinct("entidade_comunicante").sort()
+Resposta: 
+[
+  'A ARCIAL - Associação para Recuperação de Cidadãos Inadaptados de Oliveira do Hospital',
+  'A Oficina Centro de Artes e Mesteres Tradicionais de Guimarães, CIPRL',
+  ....
+]
+
+
+4.
+Código: db.contratos.aggregate([{ $group: { _id: "$tipoprocedimento", total: { $sum: 1 } } }])
+Resposta:
+[
+  { _id: 'Concurso público', total: 5300 },
+  { _id: 'Ajuste Direto Regime Geral', total: 17067 },
+  { _id: 'Ao abrigo de acordo-quadro (art.º 259.º)', total: 4678 },
+  { _id: 'Consulta Prévia', total: 8000 },
+  { _id: 'Ao abrigo de acordo-quadro (art.º 258.º)', total: 995 },
+  { _id: 'Contratação excluída II', total: 144 },
+  { _id: 'Procedimento de negociação', total: 1 },
+  {
+    _id: 'Consulta prévia ao abrigo do artigo 7º da Lei n.º 30/2021, de 21.05',
+    total: 1
+  },
+  { _id: 'Concurso público simplificado', total: 3 },
+  { _id: 'Setores especiais – isenção parte II', total: 39 },
+  { _id: 'Consulta Prévia Simplificada', total: 96 },
+  { _id: 'Concurso limitado por prévia qualificação', total: 53 }
+]
+
+
+5.
+Código: db.contratos.aggregate([{ $group: {_id:"$entidade_comunicante", total: {$sum: "$precoContratual"} } }])
+Resposta:
+[
+  { _id: 'Município de Penela', total: 70518 },
+  { _id: 'Município de Ribeira Brava', total: 286360 },
+  { _id: 'Conselho Português para os Refugiados - CPR', total: 441240 },
+  { _id: 'Agrupamento de Escolas Tomás Cabreira, Faro', total: 16280 },
+  { _id: 'AEBB - Associação Empresarial da Beira Baixa', total: 0 },
+  ...
+]
