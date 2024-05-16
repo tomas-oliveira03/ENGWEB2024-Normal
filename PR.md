@@ -1,12 +1,12 @@
 # Persistência de dados e setup
 
-Em primeiro lugar substituir o ficheiro csv para um json.
-Dentro do projeto, considero que o id é o `idcontrato` mas o mongo cria também uma entrada `_id` que não é utilizada.
+Em primeiro lugar substituí o ficheiro csv para um json (ficheiro com nome `contratos2024.json`).
+
+Dentro do projeto, considero que o id é o `idcontrato` mas o mongo cria também uma entrada `_id` que não é utilizada. Todas as buscas por id são feitas através `idcontrato`.
 
 
 # Queries
 Relativamente às queries, a sua resposta está dentro da diretoria `ex1` com o nome `queries.txt`.
-
 
 
 # Instruções de como executar as aplicações desenvolvidas

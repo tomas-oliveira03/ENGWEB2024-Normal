@@ -3,18 +3,38 @@ extends layout
 block content
   .w3-card-4
     header.w3-container.w3-teal
-        h1 Contrato #{contrato.idcontrato}
+        h1 Contrato nº#{contrato.idcontrato}
 
-    p Número de Anúncio: #{contrato.nAnuncio}
-    p Tipo de Procedimento: #{contrato.tipoprocedimento}
-    p Objeto Contrato: #{contrato.objectoContrato}
-    p Data de publicação: #{contrato.dataPublicacao}
-    p Data de Celebração do Contrato: #{contrato.dataCelebracaoContrato}
-    p Preço Contratual: #{contrato.precoContratual}
-    p Prazo de Execução: #{contrato.prazoExecucao}
-    p NIPC Entidade Comunicante: #{contrato.NIPC_entidade_comunicante}
-    p Entidade Comunicante: #{contrato.entidade_comunicante}
-    p Fundamentação: #{contrato.entidade_comunicante}
+    p
+        strong Número de Anúncio: 
+        | #{contrato.nAnuncio}
+    p
+        strong Tipo de Procedimento: 
+        | #{contrato.tipoprocedimento}
+    p
+        strong Objeto Contrato: 
+        | #{contrato.objectoContrato}
+    p
+        strong Data de Publicação: 
+        | #{contrato.dataPublicacao}
+    p
+        strong Data de Celebração do Contrato: 
+        | #{contrato.dataCelebracaoContrato}
+    p
+        strong Preço Contratual: 
+        | #{contrato.precoContratual}
+    p
+        strong Prazo de Execução: 
+        | #{contrato.prazoExecucao}
+    p
+        strong NIPC Entidade Comunicante: 
+        | #{contrato.NIPC_entidade_comunicante}
+    p
+        strong Entidade Comunicante: 
+        | #{contrato.entidade_comunicante}
+    p
+        strong Fundamentação: 
+        | #{contrato.fundamentacao}
 
     footer.w3-container.w3-blue
         h5
